@@ -9,7 +9,7 @@
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="./style.css?v=2">
 <link rel="stylesheet" href="./lab.css?v=2">
-<link rel="stylesheet" href="./classroom.css?v=4">
+<link rel="stylesheet" href="./classroom.css?v=5">
 </head>
 <body>
 <header class="site-header">
@@ -17,10 +17,10 @@
 <div class="header-tools"><button class="text-button" id="tips-button" aria-pressed="true">中文提示 开</button><button class="text-button sound-button" id="sound-button" aria-pressed="false" aria-label="撕纸音效" title="撕纸音效"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h4l5-4v14l-5-4H3zM16 9a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg><span>音效关</span></button><button class="text-button" id="reset-button"><span class="header-reset-en">Start again</span><span class="cn" lang="zh-CN">重新开始</span></button></div>
 </header>
 <main id="app" tabindex="-1"></main>
-<footer class="site-footer"><span>A little time. A life of choices.</span><span>Your choices stay in this browser.<span class="cn">你的选择仅保存在此浏览器</span></span></footer>
+<footer class="site-footer"><span class="en-label">Your progress stays in this browser.</span><span class="cn" lang="zh-CN">游戏进度仅保存在此浏览器。</span></footer>
 <div class="toast" role="status" aria-live="polite" id="toast"></div>
 <dialog id="reset-dialog"><form method="dialog"><span class="eyebrow">A FRESH STRIP</span><h2>Start a new game?</h2><p>Your current choices will be cleared.<span class="cn" lang="zh-CN">重新开始会清除本次选择和填写的感想。</span></p><div class="button-row"><button class="button secondary classroom-button" value="cancel">Keep my game<span class="cn" lang="zh-CN">继续本局</span></button><button class="button classroom-button" id="confirm-reset" value="reset">Start again<span class="cn" lang="zh-CN">重新开始</span></button></div></form></dialog>
-<script type="module" src="./app.mjs?v=4"></script>
+<script type="module" src="./app.mjs?v=5"></script>
 </body>
 </html>
 
