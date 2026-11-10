@@ -1,0 +1,215 @@
+.header-tools {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+
+.header-tools .text-button {
+  min-height: 40px;
+}
+
+.sound-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sound-button svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sound-button[aria-pressed="true"] {
+  color: var(--teal);
+  border-color: var(--teal);
+}
+
+.intro .lede {
+  margin-bottom: 16px;
+}
+
+.intro .lede .cn,
+.page-heading p .cn {
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.classroom-guide {
+  max-width: 490px;
+  margin: 0 0 18px;
+  padding: 14px 17px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 5px;
+  background: var(--paper);
+  font-size: 14px;
+}
+
+.classroom-guide h2 {
+  font: 700 16px/1.4 var(--sans);
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.classroom-guide ol {
+  padding-left: 1.3em;
+  margin: 8px 0;
+}
+
+.classroom-guide li + li {
+  margin-top: 4px;
+}
+
+.classroom-guide p {
+  font-size: 12px;
+}
+
+.classroom-button {
+  flex-direction: column;
+  gap: 2px;
+}
+
+.classroom-button .cn {
+  margin: 0;
+  color: inherit;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.progress .step .cn {
+  margin: 0;
+  font-size: 10px;
+}
+
+.classroom-note {
+  margin: 16px 0 0;
+  padding: 10px 13px;
+  background: #fff9ed;
+  border-left: 3px solid var(--accent);
+  font-size: 13px;
+}
+
+.tear-main .life-strip {
+  margin-top: 20px;
+}
+
+.cut-piece {
+  z-index: 2;
+}
+
+.tear-down {
+  font-size: 32px;
+  color: var(--ink);
+}
+
+.paper-piece.torn {
+  z-index: 3;
+  animation: paper-drop 650ms ease-out forwards;
+}
+
+.life-strip.is-tearing::after {
+  position: absolute;
+  z-index: 4;
+  content: "";
+  inset: 0 auto 0 var(--tear-edge);
+  width: 12px;
+  transform: translateX(-50%);
+  background: #fffdfa;
+  clip-path: polygon(44% 0, 86% 11%, 25% 24%, 79% 34%, 38% 47%,
+    85% 61%, 16% 73%, 60% 87%, 38% 100%, 7% 88%, 25% 73%, 3% 61%,
+    37% 49%, 7% 34%, 31% 21%, 10% 11%);
+  pointer-events: none;
+  animation: paper-seam 500ms ease-out both;
+}
+
+@keyframes paper-drop {
+  0% { transform: translateY(0); opacity: 1; }
+  18% { transform: translate(-4px, 18px) rotate(-4deg); }
+  42% { opacity: .95; }
+  100% { transform: translate(-14px, 170px) rotate(-21deg); opacity: 0; }
+}
+
+@keyframes paper-seam {
+  0% { clip-path: inset(0 0 100% 0); opacity: 1; }
+  45% { opacity: .92; }
+  100% { opacity: 0; }
+}
+
+.paper-feedback {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin: 0 auto;
+  padding: 9px 12px;
+  max-width: 850px;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  background: #fffcf5;
+  font-size: 13px;
+  text-align: left;
+}
+
+.paper-feedback b {
+  color: var(--teal);
+}
+
+.reading-bridge {
+  margin: 24px 0;
+  padding: clamp(17px, 4vw, 30px);
+  border: 1px solid #c2d0bc;
+  border-radius: 10px;
+  background: #eaf0e4;
+}
+
+.reading-bridge h3 {
+  font-family: var(--serif);
+  font-size: clamp(24px, 4vw, 37px);
+  font-weight: 400;
+}
+
+.reading-bridge p {
+  margin-top: 12px;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.reading-bridge p .cn {
+  font-size: 13px;
+}
+
+.reading-bridge .reading-next {
+  border-top: 1px solid #c2d0bc;
+  padding-top: 12px;
+}
+
+@media (max-width: 760px) {
+  .intro .lede .cn,
+  .page-heading p .cn {
+    font-size: 14px;
+  }
+
+  .classroom-guide {
+    font-size: 13px;
+  }
+
+  .header-tools {
+    gap: 4px 9px;
+  }
+
+  .header-tools .text-button {
+    min-height: 36px;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .life-strip.is-tearing::after {
+    display: none;
+  }
+}
