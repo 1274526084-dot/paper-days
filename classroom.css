@@ -29,18 +29,77 @@
   border-color: var(--teal);
 }
 
-.intro .lede {
-  margin-bottom: 16px;
+.brand .brand-home {
+  margin-top: 2px;
+  font-size: 10px;
 }
 
-.intro .lede .cn,
+.brand-slogan,
+.header-reset-en {
+  display: none;
+}
+
+.no-tips .brand-slogan,
+.no-tips .header-reset-en {
+  display: inline;
+}
+
+#reset-button .cn {
+  margin: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+.welcome-title .cn {
+  margin: 0;
+  font-size: clamp(34px, 5.5vw, 63px);
+  font-weight: 750;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.welcome-title-en {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent);
+  font-size: clamp(19px, 3vw, 31px);
+  letter-spacing: -.025em;
+}
+
+.welcome-purpose {
+  max-width: 510px;
+  margin: 18px 0;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.welcome-purpose-en {
+  display: none;
+  margin: 18px 0;
+  font-size: 16px;
+}
+
+.no-tips .welcome-purpose-en {
+  display: block;
+}
+
+.no-tips .welcome-title-en {
+  font-size: inherit;
+  color: var(--ink);
+}
+
+.welcome-actions {
+  margin-bottom: 18px;
+}
+
 .page-heading p .cn {
   font-size: 15px;
   color: var(--ink);
 }
 
 .classroom-guide {
-  max-width: 490px;
+  max-width: 510px;
   margin: 0 0 18px;
   padding: 14px 17px;
   border: 1px solid var(--line);
@@ -62,11 +121,16 @@
 }
 
 .classroom-guide li + li {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
-.classroom-guide p {
-  font-size: 12px;
+.classroom-guide li::marker {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.classroom-guide strong {
+  color: #8b392a;
 }
 
 .classroom-button {
@@ -92,6 +156,36 @@
   background: #fff9ed;
   border-left: 3px solid var(--accent);
   font-size: 13px;
+}
+
+.budget-instruction {
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.budget-instruction > strong {
+  display: block;
+  font-size: 17px;
+}
+
+.budget-instruction p {
+  margin-top: 5px;
+  color: var(--ink);
+}
+
+.budget-instruction .budget-context {
+  margin-top: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+  color: var(--teal);
+  font-weight: 650;
+}
+
+.mobile-live-impact .cn {
+  margin-top: 0;
+  font-size: 11px;
 }
 
 .tear-main .life-strip {
@@ -189,13 +283,18 @@
 }
 
 @media (max-width: 760px) {
-  .intro .lede .cn,
-  .page-heading p .cn {
-    font-size: 14px;
+  .intro {
+    padding-top: 20px;
   }
 
-  .classroom-guide {
-    font-size: 13px;
+  .welcome-purpose,
+  .page-heading p .cn {
+    font-size: 15px;
+  }
+
+  .classroom-guide,
+  .budget-instruction {
+    font-size: 14px;
   }
 
   .header-tools {
